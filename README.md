@@ -1,0 +1,5 @@
+- 🔑 Advanced Authentication: Implemented JWT, Firebase, and Google OAuth for secure and seamless user access.
+- 🏡 Real-world CRUD Operations: Create, read, update, and delete property listings using MongoDB.
+- 💡 User-friendly Features: Enhanced the user experience with image uploads, property listing management, and more.
+- 🚀 Advanced Search Functionality: Implemented cutting-edge search features to help users find what they're looking for.
+- 🌐 Deployment Made Easy: Deployed MERN real estate app for free using the 'render' platform.
