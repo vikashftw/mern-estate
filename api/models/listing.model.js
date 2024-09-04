@@ -54,6 +54,11 @@ const listingSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    isHomePage: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
   },
   { timestamps: true }
 );
