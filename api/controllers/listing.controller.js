@@ -65,7 +65,6 @@ export const getListing = async (req, res, next) => {
 export const getListings = async (req, res, next) => {
   try {
     const limit = parseInt(req.query.limit) || 9;
-    const isHomePage = req.query.isHomePage === 'true';
     const startIndex = parseInt(req.query.startIndex) || 0;
     let offer = req.query.offer;
 
@@ -97,16 +96,25 @@ export const getListings = async (req, res, next) => {
 
     const order = req.query.order || 'desc';
 
-    const listings = await Listing.find({
+    // Conditionally apply isHomePage filter
+    const query = {
       name: { $regex: searchTerm, $options: 'i' },
       offer,
       furnished,
       parking,
       type,
-    })
+    };
+
+    // Only include isHomePage in the query if it is provided in the query parameters
+    if (req.query.isHomePage !== undefined) {
+      query.isHomePage = req.query.isHomePage === 'true';
+    }
+
+    const listings = await Listing.find(query)
       .sort({ [sort]: order })
       .limit(limit)
       .skip(startIndex);
+
 
     return res.status(200).json(listings);
   } catch (error) {
