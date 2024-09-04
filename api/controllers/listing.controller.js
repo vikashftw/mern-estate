@@ -103,7 +103,6 @@ export const getListings = async (req, res, next) => {
       furnished,
       parking,
       type,
-      isHomePage,
     })
       .sort({ [sort]: order })
       .limit(limit)
