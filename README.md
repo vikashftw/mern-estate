@@ -1,3 +1,5 @@
+- Check it out: 
+
 Features include:
 - 🔍 Advanced search functionality to easily find listings
 - 🏘️ Create, read, update, and delete property listings with up to 6 images
